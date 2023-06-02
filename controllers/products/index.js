@@ -1,5 +1,4 @@
 const getProduct = require('./getProduct')
-
 const getProductShopAdd = require('./getProductShopAdd')
 const getProductWithShop = require('./getProductWithShop')
 const getProductShopAll = require('./getProductShopAll')
