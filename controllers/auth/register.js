@@ -7,7 +7,7 @@ const bcrypt = require('bcryptjs')
 // console.log(sendEmail)
 const register = async (req, res, next) => {
 
-const {name, password, email, phone,  address} = req.body;
+const {name, password, email, phone,  address, token} = req.body;
 
 const user = await User.findOne({email})
 
@@ -21,13 +21,16 @@ if(user){
     
     await User.create({name, password: hashPassword, email, phone, address })
 
-    res.status(201).json({ message: "Register User", status: "success", data: {
+    res.status(201).json({ message: "Register User", status: "success", 
+    data: {
     user: {
         name,
         email,
-        
-    }
-} })
+    },
+    token
+    
+} 
+})
 }
 
 module.exports = register;
