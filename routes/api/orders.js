@@ -11,7 +11,7 @@ const router = express.Router()
 
 
 router.post('/', addValidationOrder,  orders.getOrdersPost)
-// router.delete('/history', authMiddlevares,  orders.getOrdersHistory)
+router.post('/history',   orders.getOrdersHistory)
 router.delete('/clear', orders.getOrdersClear)
 
 

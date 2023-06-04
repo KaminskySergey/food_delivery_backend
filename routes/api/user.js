@@ -15,7 +15,7 @@ router.post('/register', authValidation,  auth.register)
 router.post('/login', loginValidation,  auth.login)
 router.get('/current', authMiddlevares,  auth.current)
 router.get('/logout', authMiddlevares,  auth.logout)
-// router.post('/', authMiddlevares, shops.getShopPost)
+
 
 
 
