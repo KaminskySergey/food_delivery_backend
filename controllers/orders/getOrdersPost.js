@@ -5,7 +5,7 @@ const { Product } = require("../../models/productsModels");
 const getOrdersPost = async (req, res, next) => {
   try {
     const { user, cart, totalPrice } = req.body;
-    console.log(cart, 'wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww')
+    
 
     let total = 0;
     let owner
@@ -14,7 +14,7 @@ const getOrdersPost = async (req, res, next) => {
 
       for (const item of cart) {
         const product = await Product.findById(item.productId).populate("owner");
-        console.log(product, 'rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr')
+        
         if (!product) {
           return res.status(400).json({ error: "Продукт не найден." });
         }

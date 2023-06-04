@@ -11,11 +11,9 @@ const {name, password, email, phone,  address, token} = req.body;
 
 const user = await User.findOne({email})
 
-if(user){
-    return res.status(409).json({ message: "Email in use" })
-    
-}   
-
+  if (user) {
+    throw new Error("Email is already in use");
+  }
     
     const hashPassword = await bcrypt.hashSync(password, bcrypt.genSaltSync(15))
     
