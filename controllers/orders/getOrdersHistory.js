@@ -2,16 +2,16 @@ const { Order } = require("../../models/ordersModels");
 const { User } = require("../../models/userModels");
 
 const getOrdersHistory = async (req, res, next) => {
-    
-    console.log(req.body.user.email, 'wwwwwww')
+    console.log(req, '111111')
+    // console.log(req.body.user.email, 'wwwwwww')
     
     try {
         const orders = await Order.find();
         
-        const filteredOrders = orders.filter((order) => order.user.email === req.body.user.email)
+        const filteredOrders = orders.filter((order) => order.user.email === req.body.email)
         
 
-        const user = await User.findOne({ email: req.body.user.email });
+        const user = await User.findOne({ email: req.body.email });
         if (!user) {
             return res.status(404).json({ error: 'Пользователь не найден' });
           }
