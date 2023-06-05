@@ -5,7 +5,7 @@ const { Shop } = require("../../models/shopsModels");
 const getProductShopAll = async (req, res, next) => {
     try {
         const shopId = req.params.shopId;
-    console.log(shopId)
+
         const shop = await Shop.findById(shopId)
 
         
@@ -15,7 +15,7 @@ const getProductShopAll = async (req, res, next) => {
         }
         
         const result = shop.products;
-        console.log(result, 'rerterterterterterter')
+
         res.json({
           status: 'succes',
           code: 200,

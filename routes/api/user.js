@@ -1,11 +1,11 @@
 const express = require('express')
 
 const { auth } = require('../../controllers')
-console.log(auth, 'shopsshopsshopsshops')
+
 const { authValidation, loginValidation } = require('../../middlewares/validationMiddlevares')
 const { authMiddlevares } = require('../../middlewares/autorizationMiddlevares')
 
-console.log(authValidation, 'eeeeeeeeeeeeeeeeee')
+
 
 const router = express.Router()
 

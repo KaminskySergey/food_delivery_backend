@@ -2,8 +2,7 @@ const { Order } = require("../../models/ordersModels");
 const { User } = require("../../models/userModels");
 
 const getOrdersHistory = async (req, res, next) => {
-    console.log(req, '111111')
-    // console.log(req.body.user.email, 'wwwwwww')
+   
     
     try {
         const orders = await Order.find();
@@ -17,7 +16,7 @@ const getOrdersHistory = async (req, res, next) => {
           }
         
         user.ordersUser = filteredOrders.map(order => order);
-        console.log(user.ordersUser, 'user.ordersUseruser.ordersUser')
+
         await user.save();
         res.json({
             status: 'success',

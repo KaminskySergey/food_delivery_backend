@@ -1,7 +1,7 @@
 const express = require('express')
 
 const { shops } = require('../../controllers')
-console.log(shops, 'shopsshopsshopsshops')
+
 const { addValidationShop } = require('../../middlewares/validationMiddlevares')
 
 

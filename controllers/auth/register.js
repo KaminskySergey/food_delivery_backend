@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs')
 
 
 
-// console.log(sendEmail)
+
 const register = async (req, res, next) => {
 
 const {name, password, email, phone,  address, token} = req.body;

@@ -24,7 +24,7 @@ const getOrdersPost = async (req, res, next) => {
         }
 
         rawTotalPrice += product.price * item.quantity;
-        console.log(rawTotalPrice, "INSIDE FOROF");
+
         owner = product.owner
       }
       total = parseFloat(rawTotalPrice.toFixed(2));
@@ -32,7 +32,6 @@ const getOrdersPost = async (req, res, next) => {
     await getTotalPrice();
 
     if (totalPrice !== total) {
-      console.log(totalPrice, "INSIDE CHECK");
       return res.status(400).json({ error: "Сумма товаров в корзине не соответствует ожидаемой сумме." });
     }
     

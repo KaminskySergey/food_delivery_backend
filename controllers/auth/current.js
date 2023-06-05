@@ -1,5 +1,5 @@
 const current = async (req, res) => {
-    console.log(req.user)
+
 const {name, email} = req.user;
 res.json({
     status: "success",

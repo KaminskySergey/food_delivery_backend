@@ -1,5 +1,4 @@
 const { Shop } = require('../../models/shopsModels')
-console.log(Shop)
 
     // READ
 const getShop = async (req, res, next) => {
