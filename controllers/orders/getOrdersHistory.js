@@ -16,7 +16,8 @@ const getOrdersHistory = async (req, res, next) => {
             return res.status(404).json({ error: 'Пользователь не найден' });
           }
         
-        user.ordersUser = filteredOrders.map((order) => order._id);
+        user.ordersUser = filteredOrders.map(order => order);
+        console.log(user.ordersUser, 'user.ordersUseruser.ordersUser')
         await user.save();
         res.json({
             status: 'success',
