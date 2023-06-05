@@ -48,10 +48,6 @@ const orderSchema = new mongoose.Schema({
       favorite: {
       type: Boolean,
       default: false,
-      },
-      createdAt: {
-        type: Date,
-        default: Date.now
       }
     },
     
@@ -63,6 +59,10 @@ const orderSchema = new mongoose.Schema({
   shop: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'shop',
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now
   }
   
 },
