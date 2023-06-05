@@ -35,7 +35,7 @@ const getOrdersPost = async (req, res, next) => {
       return res.status(400).json({ error: "Сумма товаров в корзине не соответствует ожидаемой сумме." });
     }
     
-    const order = await Order.create({ user, cart, totalPrice, shop: owner});
+    const order = await Order.create({ user, cart, totalPrice, shop: owner, createdAt: Date.now()});
     
     
     for (const item of cart) {
